@@ -3,4 +3,4 @@ project(lw1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_subdirectory(lw1)
+add_subdirectory(cutLog)
