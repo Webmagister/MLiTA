@@ -31,15 +31,15 @@ int main(int argc, char *argv[])
         std::cout << "File does not open." << std::endl;
         return 1;
     }
-    int money;
+    int money = 0;
     inputFile >> money;
-    int countVal;
+    int countVal = 0;
     inputFile >> countVal;
 
     std::vector<int> coinValues;
     while (!inputFile.eof())
     {
-        int number;
+        int number = 0;
         inputFile >> number;
         coinValues.push_back(number);
     }
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 
     std::cout << result.size() << " " << d[money] << std::endl;
 
-    for (auto coin : result)
+    for (auto & coin : result)
     {
         std::cout << coin.first << " " << coin.second << std::endl;
     }
