@@ -22,6 +22,11 @@ ${PROGRAM} ${INPUT_DATA_FOLDER}/input2.txt > ${OUT}
 diff ${OUT} ${CORRECT_OUT_FOLDER}/output2.txt > /dev/null || error
 echo -en Passed\\n\\n
 
+echo L = 7, N = 6
+${PROGRAM} ${INPUT_DATA_FOLDER}/input2.txt > ${OUT}
+diff ${OUT} ${CORRECT_OUT_FOLDER}/output2.txt > /dev/null || error
+echo -en Passed\\n\\n
+
 rm ${OUT}
 echo All tests passed
 

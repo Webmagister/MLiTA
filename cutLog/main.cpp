@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     --n;
     CutLog(log, n, cost);
 
-    std::cout << "price: " << cost << std::endl;
+    std::cout << cost << std::endl;
 
     return 0;
 }
