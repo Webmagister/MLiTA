@@ -62,13 +62,19 @@ int main(int argc, char *argv[])
     }
 
     std::map<int, int> result;
+    if (d[money] == 10000)
+    {
+        std::cout << "No." << std::endl;
+
+        return 0;
+    }
     GetResult(money, p, result);
 
     std::cout << result.size() << " " << d[money] << std::endl;
 
-    for (auto & coin : result)
+    for (auto iter = result.rbegin(); iter != result.rend(); ++iter)
     {
-        std::cout << coin.first << " " << coin.second << std::endl;
+        std::cout << iter->first << " " << iter->second << std::endl;
     }
 
     return 0;
