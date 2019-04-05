@@ -13,12 +13,12 @@ function error() {
 }
 
 echo input1.txt
-${PROGRAM} ${INPUT_DATA_FOLDER}/input1.txt > ${OUT}
+${PROGRAM} ${INPUT_DATA_FOLDER}/input1.txt ${OUT}
 diff ${OUT} ${CORRECT_OUT_FOLDER}/output1.txt > /dev/null || error
 echo -en Passed\\n\\n
 
 echo input12.txt
-${PROGRAM} ${INPUT_DATA_FOLDER}/input12.txt > ${OUT}
+${PROGRAM} ${INPUT_DATA_FOLDER}/input12.txt ${OUT}
 diff ${OUT} ${CORRECT_OUT_FOLDER}/output12.txt > /dev/null || error
 echo -en Passed\\n\\n
 

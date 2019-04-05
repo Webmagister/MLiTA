@@ -13,17 +13,17 @@ function error() {
 }
 
 echo L = 100, N = 3
-${PROGRAM} ${INPUT_DATA_FOLDER}/input1.txt > ${OUT}
+${PROGRAM} ${INPUT_DATA_FOLDER}/input1.txt ${OUT}
 diff ${OUT} ${CORRECT_OUT_FOLDER}/output1.txt > /dev/null || error
 echo -en Passed\\n\\n
 
 echo L = 10, N = 4
-${PROGRAM} ${INPUT_DATA_FOLDER}/input2.txt > ${OUT}
+${PROGRAM} ${INPUT_DATA_FOLDER}/input2.txt ${OUT}
 diff ${OUT} ${CORRECT_OUT_FOLDER}/output2.txt > /dev/null || error
 echo -en Passed\\n\\n
 
 echo L = 7, N = 6
-${PROGRAM} ${INPUT_DATA_FOLDER}/input2.txt > ${OUT}
+${PROGRAM} ${INPUT_DATA_FOLDER}/input2.txt ${OUT}
 diff ${OUT} ${CORRECT_OUT_FOLDER}/output2.txt > /dev/null || error
 echo -en Passed\\n\\n
 

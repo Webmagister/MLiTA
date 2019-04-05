@@ -14,6 +14,7 @@
 */
 #include <iostream>
 #include <fstream>
+#include <ostream>
 
 struct Log
 {
@@ -47,7 +48,10 @@ int main(int argc, char *argv[])
     std::ifstream inputFile;
     inputFile.open(argv[1]);
 
-    if (!inputFile.is_open())
+    std::ofstream outputFile;
+    outputFile.open(argv[2]);
+
+    if (!inputFile.is_open() || !outputFile.is_open())
     {
         std::cout << "File does not open." << std::endl;
         return 1;
@@ -64,7 +68,7 @@ int main(int argc, char *argv[])
     --n;
     CutLog(log, n, cost);
 
-    std::cout << cost << std::endl;
+    outputFile << cost << std::endl;
 
     return 0;
 }

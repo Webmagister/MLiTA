@@ -16,6 +16,7 @@
 */
 #include <iostream>
 #include <fstream>
+#include <ostream>
 #include <map>
 #include <set>
 #include <vector>
@@ -64,6 +65,9 @@ int main(int argc, char *argv[])
     std::ifstream inputFile;
     inputFile.open(argv[1]);
 
+    std::ofstream outputFile;
+    outputFile.open(argv[2]);
+
     std::vector<Rect> mas;
     std::vector<int> X, Y;
 
@@ -103,7 +107,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    std::cout << square << std::endl;
+    outputFile << square << std::endl;
 
     return 0;
 }

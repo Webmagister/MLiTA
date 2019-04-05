@@ -18,6 +18,7 @@
 */
 #include <iostream>
 #include <fstream>
+#include <ostream>
 #include <vector>
 #include <map>
 
@@ -44,7 +45,10 @@ int main(int argc, char *argv[])
     std::ifstream inputFile;
     inputFile.open(argv[1]);
 
-    if (!inputFile.is_open())
+    std::ofstream outputFile;
+    outputFile.open(argv[2]);
+
+    if (!inputFile.is_open() || !outputFile.is_open())
     {
         std::cout << "File does not open." << std::endl;
         return 1;
@@ -82,17 +86,17 @@ int main(int argc, char *argv[])
     std::map<int, int> result;
     if (d[money] == 10000)
     {
-        std::cout << "No." << std::endl;
+        outputFile << "No." << std::endl;
 
         return 0;
     }
     GetResult(money, p, result);
 
-    std::cout << result.size() << " " << d[money] << std::endl;
+    outputFile << result.size() << " " << d[money] << std::endl;
 
     for (auto iter = result.rbegin(); iter != result.rend(); ++iter)
     {
-        std::cout << iter->first << " " << iter->second << std::endl;
+        outputFile << iter->first << " " << iter->second << std::endl;
     }
 
     return 0;
