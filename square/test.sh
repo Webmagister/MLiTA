@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROGRAM="./moneyExchange"
+PROGRAM="./square"
 OUT=$(mktemp)
 INPUT_DATA_FOLDER="tests"
 CORRECT_OUT_FOLDER="correctOutput"
@@ -12,14 +12,14 @@ function error() {
     exit 1
 }
 
-echo Money = 15, Coins = 1, 11, 5
+echo input1.txt
 ${PROGRAM} ${INPUT_DATA_FOLDER}/input1.txt > ${OUT}
 diff ${OUT} ${CORRECT_OUT_FOLDER}/output1.txt > /dev/null || error
 echo -en Passed\\n\\n
 
-echo Money = 12, Coins = 1, 10, 3
-${PROGRAM} ${INPUT_DATA_FOLDER}/input2.txt > ${OUT}
-diff ${OUT} ${CORRECT_OUT_FOLDER}/output2.txt > /dev/null || error
+echo input12.txt
+${PROGRAM} ${INPUT_DATA_FOLDER}/input12.txt > ${OUT}
+diff ${OUT} ${CORRECT_OUT_FOLDER}/output12.txt > /dev/null || error
 echo -en Passed\\n\\n
 
 rm ${OUT}

@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     X.resize(unique(X.begin(), X.end()) - X.begin());
     Y.resize(unique(Y.begin(), Y.end()) - Y.begin());
 
-    int square = 0;
+    size_t square = 0;
     for (size_t i = 0; i < X.size() - 1; ++i)
     {
         for (size_t j = 0; j < Y.size() - 1; ++j)
